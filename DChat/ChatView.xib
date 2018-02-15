@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChatView" customModule="MChat" customModuleProvider="target">
+            <connections>
+                <outlet property="bottomView" destination="m9y-yT-x12" id="g1H-gO-rbT"/>
+                <outlet property="bottomViewBottomConstraint" destination="rsT-WL-2EU" id="YMu-sz-aWU"/>
+                <outlet property="bottomViewHeightConstraint" destination="yt1-XI-alF" id="Xvv-Wp-NrF"/>
+                <outlet property="tableView" destination="Qqx-BX-7Pp" id="t2R-2o-OzK"/>
+                <outlet property="tableViewDelegate" destination="1Tf-Uk-uBy" id="oEw-fR-gY9"/>
+                <outlet property="textView" destination="nxX-8c-9rY" id="Cpf-CT-XhH"/>
+                <outlet property="textViewDelegate" destination="Aai-zd-hMQ" id="Z9I-nM-ch0"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qqx-BX-7Pp">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="508"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <outlet property="dataSource" destination="1Tf-Uk-uBy" id="7lO-iK-4TH"/>
+                        <outlet property="delegate" destination="1Tf-Uk-uBy" id="2Av-7a-aRA"/>
+                    </connections>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m9y-yT-x12">
+                    <rect key="frame" x="0.0" y="508" width="320" height="60"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wsl-9M-hhO">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="1"/>
+                            <color key="backgroundColor" red="0.78431372549019607" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="ifC-2G-pvx"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qFL-VC-bYr">
+                            <rect key="frame" x="270" y="15" width="42" height="30"/>
+                            <state key="normal" title="Enviar"/>
+                            <connections>
+                                <action selector="didTapSend" destination="-1" eventType="touchUpInside" id="3eL-dt-91p"/>
+                            </connections>
+                        </button>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="nxX-8c-9rY">
+                            <rect key="frame" x="10" y="10" width="245" height="40"/>
+                            <color key="backgroundColor" red="0.92941176470588238" green="0.93333333333333335" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            <connections>
+                                <outlet property="delegate" destination="Aai-zd-hMQ" id="oA9-Uj-xNV"/>
+                            </connections>
+                        </textView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="Wsl-9M-hhO" secondAttribute="trailing" id="111-7g-WaO"/>
+                        <constraint firstItem="Wsl-9M-hhO" firstAttribute="top" secondItem="m9y-yT-x12" secondAttribute="top" id="764-Ec-Mq1"/>
+                        <constraint firstItem="Wsl-9M-hhO" firstAttribute="leading" secondItem="m9y-yT-x12" secondAttribute="leading" id="LyV-Qg-rhZ"/>
+                        <constraint firstItem="nxX-8c-9rY" firstAttribute="top" secondItem="m9y-yT-x12" secondAttribute="top" constant="10" id="Ysy-ar-ne0"/>
+                        <constraint firstAttribute="bottom" secondItem="nxX-8c-9rY" secondAttribute="bottom" constant="10" id="a9Y-5F-QxV"/>
+                        <constraint firstAttribute="trailing" secondItem="qFL-VC-bYr" secondAttribute="trailing" constant="8" id="aZY-dY-KKj"/>
+                        <constraint firstItem="nxX-8c-9rY" firstAttribute="leading" secondItem="m9y-yT-x12" secondAttribute="leading" constant="10" id="rUy-Gv-sdM"/>
+                        <constraint firstItem="qFL-VC-bYr" firstAttribute="centerY" secondItem="m9y-yT-x12" secondAttribute="centerY" id="rpP-Pm-PM6"/>
+                        <constraint firstItem="qFL-VC-bYr" firstAttribute="leading" secondItem="nxX-8c-9rY" secondAttribute="trailing" constant="15" id="xI3-6L-V1B"/>
+                        <constraint firstAttribute="height" constant="60" id="yt1-XI-alF"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="m9y-yT-x12" firstAttribute="top" secondItem="Qqx-BX-7Pp" secondAttribute="bottom" id="M9m-ji-6Fj"/>
+                <constraint firstItem="m9y-yT-x12" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="WTb-bC-ImZ"/>
+                <constraint firstItem="Qqx-BX-7Pp" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="dIO-dx-89d"/>
+                <constraint firstAttribute="trailing" secondItem="Qqx-BX-7Pp" secondAttribute="trailing" id="nwt-Ia-h4U"/>
+                <constraint firstItem="m9y-yT-x12" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="rUX-g8-kwH"/>
+                <constraint firstItem="m9y-yT-x12" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="rsT-WL-2EU"/>
+                <constraint firstItem="Qqx-BX-7Pp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="tcw-jQ-7Wq"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+        </view>
+        <customObject id="1Tf-Uk-uBy" customClass="ChatTableViewDelegate" customModule="MChat" customModuleProvider="target"/>
+        <customObject id="Aai-zd-hMQ" customClass="ChatTextViewDelegate" customModule="MChat" customModuleProvider="target"/>
+    </objects>
+</document>
